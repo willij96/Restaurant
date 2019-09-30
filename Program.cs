@@ -35,9 +35,9 @@ namespace Restaurant
                         Write("Table: ");
                         string table = ReadLine();
 
-                        Order order = new Order(dish, table);
+                        Order newOrder = new Order(dish, table);
 
-                        restaurant.RegisterOrder(order);
+                        restaurant.RegisterOrder(newOrder);
 
                         Clear();
 
@@ -49,8 +49,18 @@ namespace Restaurant
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
 
+                        WriteLine("Table   Dish               Registered");
+                        WriteLine("----------------------------------------------");
 
+                        foreach (Order order in restaurant.orderQueue)
+                        {
+                            WriteLine($"{order.Table} {order.Dish}            {order.RegisteredAt}");
+                        }
 
+                        WriteLine();
+                        WriteLine("<Press any key to continue>");
+
+                        ReadKey();
                         
 
                         break;

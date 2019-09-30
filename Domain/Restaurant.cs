@@ -7,7 +7,7 @@ namespace Restaurant.Domain
     class RestaurantX
     {
         public string Name { get; set; }
-        private Queue<Order> orderQueue { get; } = new Queue<Order>();
+        public Queue<Order> orderQueue { get; } = new Queue<Order>();
 
         public RestaurantX(string name)
         {
